@@ -1,0 +1,93 @@
+***************
+    Runtime
+***************
+
+1. Calculating workload:
+
+    If there is a box containing an n number of crackers and I want to determine the runtime of finding out how many of those crackers are elephants are in the box:
+
+    a. e_count = 0
+    b. for x in crackers
+        c. if x == elephant:
+            d. increase e_count by 1
+
+    I touch n (the number of crackers) one time when I loop over. 
+    a, c, and d are negligable when thinking about runtime. 
+    Thus, this operation is O(n).
+
+2. Runtime efficiency order from fast to slow:
+    
+    O(1) - Constant
+    O(logn) - Logrithmic
+    O(n) - Linear
+    O(nlogn) - Quasilinear
+    O(n^2) - Quadratic
+    O(2^n) - Exponential
+
+***************
+Stacks + Queues
+***************
+
+1. STACK VS QUEUE
+    
+    1. Stack - loading + unloading pallets onto flatbed.
+                (it would be difficult to unload from the bottom)
+    2. Queue - bottlecapping beer as roll down assembly line.
+                (it would be inefficient to bottle the last in)
+    3. Stack - calculating solution to 2 + (7 * 4) - (3 / 2)
+                (because recursion)
+
+2. Where queue would be appropriate:
+    
+    Determinining which incoming caller to assist at call center
+    Which customer to assist in fabric cutting line
+    Assigning place in waitlist for an appointment
+
+3. Where stack would be appropriate: 
+
+    Completing a maze
+    Reversing a word
+    Serving pancakes
+
+***************
+  Linked Lists
+***************
+
+1. DEFINE THIS LL
+
+    a. The nodes in LinkedList (LL) are: a, b, and c.
+    b. The data for each node a = 'Apple', b = 'Berry', c = 'Cherry'
+    c. The head of LL is currently pointing to a
+    d. The tail of LL is not currently defined. But it would point to c.
+    Each node (a, b, c) has data (listed at b) and a next. 
+        a points to b, (so it's next is b)
+        b points to c, (so it's next is c)
+        and c points to none.  (so it's next is None)
+
+        This allows the information to be stored in different parts in memory (not sequentially stored) and less runtime if reorganizion is needed.
+
+2. LL VS DLL
+
+    A linked list contains a head, (maybe) a tail, and nodes that must have data and a next defined.  The next points in one direction (away from head).
+
+    A doubly linked list contains everything a linked list contains in addition to a previous. Just like next points to the next item in the list, previous points to the node before it. This allows for bidirectional traversing. 
+
+3. Why Appending with a tail is faster in RT
+
+    If we wanted to append to a list without knowing where the end of the list was, we would need to loop over the entire list (searching for where next == None) in order to find the node to append to. This would be 0(n). If we knew where the tail was, we could just append the node to the node that is labeled the tail, reassign the ll's tail with an O(1) operation because finding the tail and adding a node is a constant regardless of how long the list.
+
+***************
+    Trees
+***************
+
+1. BFS of listed tree to find burritos
+    
+    Food, Italian, Indian, Mexican, lasagna, pizza, tikka masala, saag, burritos!
+
+2. DFS of listed tree to find burritos
+
+    food, italian, lasagna, pizza, thin crust, chicago style, NY style, sicilian, indian, tikka masala, saag, mexican, burritos!
+
+3. How is a binary search tree different from other trees?
+    
+    All the nodes to the left are smaller than the nodes on the right. In an non binary tree, order is not necesarily ordered and thus runtime when searching for a node can not be cut in half. 
